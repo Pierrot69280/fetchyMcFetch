@@ -1,3 +1,11 @@
+html {
+    background-color: #111;
+}
+
+.container, .container-fluid {
+    background-color: #111;
+}
+
 *, ::before, ::after {
     box-sizing: border-box;
     margin: 0;
@@ -6,7 +14,7 @@
 
 body {
     font-family: Lato, Helvetica, sans-serif;
-    background: #111;
+    background-color: #111;
 }
 .home {
     height: 100vh;
@@ -70,6 +78,7 @@ nav {
     position: fixed;
     width: 97vw;
     min-height: 100vh;
+    margin-top: -1.3cm;
     right: 0;
     display: flex;
     justify-content: center;
@@ -97,3 +106,8 @@ a:hover {
     transition: 0.5s;
     color: mediumpurple;
 }
+
+
+
+
+
