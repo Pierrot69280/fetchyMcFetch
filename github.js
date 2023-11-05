@@ -23,11 +23,11 @@ apiPierreGithub().then(apiElement => {
     const avatar = apiElement.avatar_url;
     const followersCount = apiElement.followers;
     const pseudo = apiElement.login;
-    const githubProfileUrl = apiElement.html_url; // GitHub profile URL
+    const githubProfileUrl = apiElement.html_url;
 
     const content = `
     <div style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-      <a href="${githubProfileUrl}" target="_blank"> <!-- Link to your GitHub profile -->
+      <a href="${githubProfileUrl}" target="_blank"> 
         <img style="border-radius: 5%; height: 4cm; width: 4cm" src="${avatar}" alt="Avatar">
       </a>
       <br>Pseudo: ${pseudo}
@@ -41,7 +41,7 @@ apiPierreGithub().then(apiElement => {
 const showReposButton = document.getElementById('showReposButton');
 const reposList = document.getElementById('reposList');
 
-// Fonction pour récupérer et afficher vos dépôts GitHub
+
 async function afficherDepotsGitHub() {
     try {
         const response = await fetch("https://api.github.com/users/Pierrot69280/repos");
