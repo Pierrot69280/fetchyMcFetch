@@ -1,8 +1,8 @@
-html {
+html{
     background-color: #111;
 }
 
-.container, .container-fluid {
+.container-fluid {
     background-color: #111;
 }
 
@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: Lato, Helvetica, sans-serif;
-    background-color: #111;
+
 }
 
 h1 {
@@ -73,7 +73,7 @@ nav {
     position: fixed;
     width: 97vw;
     min-height: 100vh;
-    margin-top: -1.3cm;
+    margin-top: -5cm;
     right: 0;
     display: flex;
     justify-content: center;
@@ -84,6 +84,7 @@ nav {
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.73, 0.11, 0.67, 0.84);
 }
+
 nav.active {
     transform: translate(0);
 }
@@ -102,7 +103,18 @@ a:hover {
     color: mediumpurple;
 }
 
+nav {
+    z-index: 1;
+}
 
+.etudiants {
+    gap: 5cm;
+}
 
+.cartes {
+    align-items: center;
+    margin-top: 5cm;
+    background-color: #111111;
+}
 
 
