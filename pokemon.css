@@ -1,31 +1,3 @@
-
-
-*, ::before, ::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Lato, Helvetica, sans-serif;
-    background: #111;
-}
-.home {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-h1 {
-    font-size: 50px;
-    text-align: center;
-    color: #f1f1f1;
-    font-weight: 100;
-    margin-bottom: 250px;
-}
-h1 span {
-    font-weight: 600;
-}
 .nav-toggler {
     position: fixed;
     z-index: 10;
@@ -71,6 +43,7 @@ h1 span {
 nav {
     z-index: 1;
     position: fixed;
+    top: -0cm;
     width: 97vw;
     min-height: 100vh;
     right: 0;
@@ -101,6 +74,79 @@ a:hover {
     color: mediumpurple;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #111111;
+}
 
+body,
+input,
+textarea,
+select,
+button {
+    color: white;
+    font: 400 1rem "Roboto", sans-serif;
+}
 
+button {
+    cursor: pointer;
+}
 
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.searchBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchBox input {
+    margin-top: 2cm;
+    border-radius: 8px 0 0 8px;
+    border: 0;
+    outline: none;
+    height: 36px;
+    padding: 4px 16px;
+    background-color: white;
+    color: #111111;
+}
+
+.searchBox button {
+    margin-top: 2cm;
+    border-radius: 0 8px 8px 0;
+    border: 0;
+    height: 36px;
+    padding: 4px 16px;
+    background-color: white;
+}
+
+.pokemonBox {
+    margin-top: 2cm;
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.pokemonBox img {
+    width: 200px;
+}
+
+.pokemonBox p {
+    margin-top: 1rem;
+}
+
+.pokemonBox .pokemonInfos {
+    padding: 2rem;
+}

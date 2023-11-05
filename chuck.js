@@ -75,5 +75,5 @@ fetch("https://api.chucknorris.io/jokes/categories")
 const boutonReset = document.querySelector('.boutonReset');
 
 boutonReset.addEventListener("click", () => {
-    texteBlague.innerHTML = ""; // Efface le contenu de texteBlague
+    texteBlague.innerHTML = "";
 });
