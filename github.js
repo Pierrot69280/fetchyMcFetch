@@ -30,8 +30,8 @@ apiPierreGithub().then(apiElement => {
       <a href="${githubProfileUrl}" target="_blank"> <!-- Link to your GitHub profile -->
         <img style="border-radius: 5%; height: 4cm; width: 4cm" src="${avatar}" alt="Avatar">
       </a>
-      <br>${pseudo}
-      <p>Followers : ${followersCount}
+      <br>Pseudo: ${pseudo}
+      <p>Followers: ${followersCount}
     </div>
   `;
 
@@ -41,7 +41,7 @@ apiPierreGithub().then(apiElement => {
 const showReposButton = document.getElementById('showReposButton');
 const reposList = document.getElementById('reposList');
 
-
+// Fonction pour récupérer et afficher vos dépôts GitHub
 async function afficherDepotsGitHub() {
     try {
         const response = await fetch("https://api.github.com/users/Pierrot69280/repos");
@@ -64,3 +64,5 @@ async function afficherDepotsGitHub() {
 }
 
 showReposButton.addEventListener('click', afficherDepotsGitHub);
+
+
