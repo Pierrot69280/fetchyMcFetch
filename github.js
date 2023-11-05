@@ -30,13 +30,8 @@ apiPierreGithub().then(apiElement => {
       <a href="${githubProfileUrl}" target="_blank"> <!-- Link to your GitHub profile -->
         <img style="border-radius: 5%; height: 4cm; width: 4cm" src="${avatar}" alt="Avatar">
       </a>
-<<<<<<<<< Temporary merge branch 1
       <br>Pseudo: ${pseudo}
       <p>Followers: ${followersCount}
-=========
-      <br>${pseudo}
-      <p>Followers : ${followersCount}
->>>>>>>>> Temporary merge branch 2
     </div>
   `;
 
@@ -52,14 +47,6 @@ async function afficherDepotsGitHub() {
         const response = await fetch("https://api.github.com/users/Pierrot69280/repos");
         const repos = await response.json();
 
-<<<<<<<<< Temporary merge branch 1
-=========
-async function afficherDepotsGitHub() {
-    try {
-        const response = await fetch("https://api.github.com/users/Pierrot69280/repos");
-        const repos = await response.json();
-
->>>>>>>>> Temporary merge branch 2
         const listeDepotsHTML = repos.map(repo => {
             return `
         <div class="text-center">
