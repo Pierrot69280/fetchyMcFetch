@@ -1,3 +1,7 @@
+html, body {
+    overflow-x: hidden;
+}
+
 .nav-toggler {
     position: fixed;
     z-index: 10;
