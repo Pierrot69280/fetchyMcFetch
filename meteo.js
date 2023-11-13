@@ -13,6 +13,7 @@ const champChercher = document.querySelector("#search-input");
 const emplacement = document.querySelector("#location");
 const temperature = document.querySelector("#temperature");
 const description = document.querySelector("#description");
+const imageMeteo = document.querySelector("#weather-image");
 
 boutonChercher.addEventListener("click", () => {
     const ville = champChercher.value;
@@ -25,9 +26,36 @@ boutonChercher.addEventListener("click", () => {
             const temperatureEnFrancais = convertirEnFrancais(temperatureCelsius);
             temperature.textContent = `Température : ${temperatureEnFrancais} °C`;
             description.textContent = `Description : ${donnees.weather[0].description}`;
+
+
+            mettreAJourImageMeteo(donnees.weather[0].main);
         });
 });
 
 function convertirEnFrancais(temperatureCelsius) {
     return temperatureCelsius.toFixed(1);
 }
+
+
+function mettreAJourImageMeteo(conditionMeteo) {
+    const cheminImage = determineCheminImage(conditionMeteo);
+    imageMeteo.src = cheminImage;
+}
+
+
+function determineCheminImage(conditionMeteo) {
+    switch (conditionMeteo) {
+        case "Clear":
+            return "ciel.jpg";
+        case "Clouds":
+            return "nuages.jpg";
+        case "Rain":
+            return "pluie.png";
+        case "Snow":
+            return "neige.jpg";
+        case "Hail":
+            return "grele.jpg";
+    }
+}
+
+

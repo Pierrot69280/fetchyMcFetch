@@ -124,5 +124,12 @@ a:hover {
     margin-top: 3cm;
 }
 
+#weather-image {
+    width: 300px; /* ajustez la taille selon vos besoins */
+    border-radius: 8px; /* ajustez le rayon de l'arrondi selon vos besoins */
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}
 
 
