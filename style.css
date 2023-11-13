@@ -101,6 +101,14 @@ a:hover {
     color: mediumpurple;
 }
 
+.pierre > img {
+    width: 300px;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+    margin-top: -13cm;
+}
+
 
 
 
