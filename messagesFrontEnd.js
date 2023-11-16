@@ -3,6 +3,8 @@
 const hamburgerButton = document.querySelector(".nav-toggler")
 const navigation = document.querySelector("nav")
 
+
+
 hamburgerButton.addEventListener("click", toggleNav)
 
 function toggleNav() {
@@ -11,7 +13,7 @@ function toggleNav() {
 }
 
 
-// ---------------------- //
+// ----------------------------------------- //
 
 
 const content = document.querySelector('.content')
@@ -88,29 +90,13 @@ function generateMessage(message) {
     return messageTemplate
 }
 
-
-// --------------------SEND MESSAGE -------------- //
-function renderMessageForm() {
-    let messageTemplate =
-        `<div class="form-message">
-    <input type="text" id="message" class="form-message" placeholder="Message...">
-    <button class="btn mt-3 boutonSend" id="sendButton">Envoyer</button>
-
-</div>`
-    render(messageTemplate)
-    const sendButton = document.querySelector('#sendButton')
-
-}
-
-// --------------------SEND MESSAGE -------------- //
-
-
 function renderMessages(tableauMessages) {
     let contentMessages = ""
     tableauMessages.forEach(message => {
         contentMessages += generateMessage(message)
     })
     render(contentMessages)
+    renderMessageForm()
 }
 
 function render(pageContent) {
@@ -136,14 +122,43 @@ async function fetchMessages() {
             }
         })
 }
+// --------------------SEND MESSAGE -------------- //
+function renderMessageForm() {
+    let messageTemplate =
+        `<div class="form-message" style="display: block;">
+            <input type="text" id="message" class="form-message-input" placeholder="Message..." style="border: 1px solid black;">
+            <button class="btn mt-3 boutonSend" id="sendButton" style="background-color: red; color: white;">Envoyer</button>
+        </div>`;
 
-run()
+    content.innerHTML += messageTemplate;
 
+    const sendButton = document.querySelector('#sendButton');
 
+    sendButton.addEventListener('click', () => {
+        postMessage();
+    });
+}
 
+async function postMessage(){
 
+    const message = document.querySelector('#message')
 
+    let corpsMessage = {
+        content : message.value
+    }
 
+    const messageParams = {
+        headers : {"Content-type":"application/json",
+            "Authorization":`Bearer ${token}`},
+        method : "POST",
+        body :  JSON.stringify(corpsMessage)
+    }
 
-
-
+    await fetch(`https://b1messenger.imatrythis.tk/api/messages/new`, messageParams)
+        .then(response => response.json())
+        .then(data=>{
+            console.log(data)
+            run()
+        })
+}
+// --------------------SEND MESSAGE -------------- //
